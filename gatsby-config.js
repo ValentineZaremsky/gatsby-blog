@@ -5,6 +5,8 @@
  */
 
 module.exports = {
-  /* Your site config here */
+  siteMetadata: {
+    title: "Great gatsby multi-language blog",
+  },
   plugins: [],
 }
