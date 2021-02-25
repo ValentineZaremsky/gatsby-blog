@@ -7,6 +7,43 @@
 module.exports = {
   siteMetadata: {
     title: "Great gatsby multi-language blog",
+    description: "The only home we've ever known extraplanetary. Brain is the seed of intelligence are softly dancing colonies globular star cluster as a patch of light!",
+    phone: "+380 66 777 88 99",
   },
-  plugins: [],
+  plugins: [
+    "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "content",
+        path: `${__dirname}/content/`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1200,
+            },
+          },
+        ],
+      },
+    },
+    {
+      resolve: "gatsby-plugin-intl",
+      options: {
+        path: `${__dirname}/src/translations`,
+        languages: ["en", "ru", "uk"],
+        defaultLanguage: "uk",
+        // автоматически перенаправлять на `/ru` или `/en` когда человек на главной `/`
+        // имейте ввиду: у Google Chrome всегда стоит `en-US`! экспериментируйте
+        redirect: false,
+      },
+    },
+    'gatsby-plugin-react-helmet',
+  ],
 }
