@@ -1,11 +1,19 @@
 // gatsby-node.js
 const path = require("path")
 
-exports.onCreateWebpackConfig = ({ actions }) => {
+exports.onCreateWebpackConfig = ({ getConfig, actions, plugins }) => {
   actions.setWebpackConfig({
+    // отключить  source-map в итоговой сборке
+    devtool: getConfig().mode === "production" ? false : "source-map",
     resolve: {
       modules: [path.resolve(__dirname, "src"), "node_modules"],
     },
+    // по желанию вырубить react-dev-tools
+    plugins: [
+      plugins.define({
+        '__REACT_DEVTOOLS_GLOBAL_HOOK__': `({ isDisabled: true })`
+      })
+    ],
   })
 }
 

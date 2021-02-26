@@ -1,0 +1,9 @@
+/* components/tip/tip.module.css */
+/* стиль с именем с module.css это css-модуль */
+.tip {
+  padding: 2rem;
+  color: white;
+}
+.heading { font-weight: bold; }
+.warning { background-color: coral; }
+.danger { background-color: crimson; }

@@ -1,6 +1,9 @@
 // pages/index.js
 import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
+import Layout from "components/layout"
+import ThemeSwitcher from "components/theme-switcher"
+import image from "assets/images/logo.png"
 
 // получить все записи, отсортированные по дате
 const getPosts = graphql`
@@ -30,7 +33,9 @@ export default function HomePage({ pageContext: { language } }) {
 
   return (
     <main>
-      <h1>Posts</h1>
+      <ThemeSwitcher />
+      <h1>Andromeda</h1>
+      <img src={image} alt="Andromeda" width={120} height="auto" />
       <ul>
         {posts.map(({ node: { frontmatter: post } }, index) => (
           <li key={index}>

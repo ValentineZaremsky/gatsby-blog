@@ -25,9 +25,12 @@
     "gatsby-source-filesystem": "^2.11.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "remark-external-links": "^8.0.0"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-optional-chaining": "^7.13.0",
+    "babel-preset-gatsby": "^0.12.2",
     "prettier": "2.2.1"
   },
   "repository": {

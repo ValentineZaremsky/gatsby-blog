@@ -23,6 +23,13 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [`.mdx`, `.md`],
+        // родные плагины remark
+        remarkPlugins: [
+          // ставит внешним ссылкам атрибуты rel="nofollow, noopener, noreferrer"
+          // открывает их в новой вкладке
+          require("remark-external-links"),
+        ],
+        // адаптированные плагины
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
